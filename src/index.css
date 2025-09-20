@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Cloud Study Jam Design System */
+
+@layer base {
+  :root {
+    /* Google Cloud Brand Colors */
+    --gcp-blue: 221 83% 62%;
+    --gcp-red: 4 86% 58%;
+    --gcp-yellow: 43 96% 56%;
+    --gcp-green: 142 52% 54%;
+    
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 210 11% 13%;
+    
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 13%;
+    --card-hover: 0 0% 98%;
+    
+    /* Primary (Google Blue) */
+    --primary: 221 83% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 221 83% 58%;
+    
+    /* Secondary (Light Google Blue) */
+    --secondary: 221 100% 97%;
+    --secondary-foreground: 221 83% 62%;
+    
+    /* Accent Colors */
+    --accent-red: 4 86% 58%;
+    --accent-yellow: 43 96% 56%;
+    --accent-green: 142 52% 54%;
+    --accent-red-bg: 4 86% 95%;
+    --accent-yellow-bg: 43 96% 94%;
+    --accent-green-bg: 142 52% 94%;
+    
+    /* UI Elements */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 62%;
+    
+    /* Effects */
+    --shadow-soft: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-medium: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-large: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --shadow-glow-strong: 0 0 60px hsl(var(--primary) / 0.25), 0 0 100px hsl(var(--primary) / 0.1);
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--gcp-blue)), hsl(var(--gcp-green)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  /* Hero Animations */
+  .hero-text {
+    @apply opacity-0 transform translate-y-8;
+    animation: hero-fade-up 0.8s ease-out forwards;
+  }
+  
+  .hero-text.delay-1 { animation-delay: 0.2s; }
+  .hero-text.delay-2 { animation-delay: 0.4s; }
+  .hero-text.delay-3 { animation-delay: 0.6s; }
+  
+  /* Card Animations */
+  .gcp-card {
+    @apply transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .gcp-card:hover {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  /* Button Variants */
+  .btn-gcp-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium;
+    @apply transition-all duration-200 hover:bg-primary-hover hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-gcp-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium;
+    @apply transition-all duration-200 hover:bg-secondary/80 hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  /* Color Accent Classes */
+  .accent-red { color: hsl(var(--accent-red)); }
+  .accent-yellow { color: hsl(var(--accent-yellow)); }
+  .accent-green { color: hsl(var(--accent-green)); }
+  .bg-accent-red { background-color: hsl(var(--accent-red-bg)); }
+  .bg-accent-yellow { background-color: hsl(var(--accent-yellow-bg)); }
+  .bg-accent-green { background-color: hsl(var(--accent-green-bg)); }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+}
+
+@layer utilities {
+  /* Custom Shadow Utilities */
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-large { box-shadow: var(--shadow-large); }
+  .shadow-xl { box-shadow: var(--shadow-xl); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-glow-strong { box-shadow: var(--shadow-glow-strong); }
+  
+  /* Animation Utilities */
+  .transition-smooth { transition: var(--transition-smooth); }
+  .transition-bounce { transition: var(--transition-bounce); }
+}
+
+/* Keyframe Animations */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
