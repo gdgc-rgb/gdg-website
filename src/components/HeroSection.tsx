@@ -849,7 +849,9 @@ const HeroSection = () => {
               </MagneticButton>
             </MicroPulseFeedback>
           </motion.div>
-        </motion.div>
+
+          
+        </StaggeredReveal>
 
         {/* Stats */}
         <StaggeredReveal
