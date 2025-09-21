@@ -12,10 +12,7 @@ const Footer = () => {
           </div>
           
           <div className="text-sm text-muted-foreground text-center md:text-right">
-            <p>© 2024 Google Developer Group on Campus. All rights reserved.</p>
-            <p className="mt-1">
-              Built with ❤️ for the developer community
-            </p>
+            <p>© 2025 Google Developer Group on Campus. All rights reserved.</p>
           </div>
         </div>
         

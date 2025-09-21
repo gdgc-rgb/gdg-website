@@ -805,11 +805,11 @@ const HeroSection = () => {
           </motion.div>
         </FadeScaleIn>
 
-        <StaggeredReveal
-          delay={0.8}
-          staggerDelay={0.15}
-          direction="up"
+        <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, type: "spring", stiffness: 400, damping: 10 }}
         >
           <motion.div
             whileHover={{ y: -5 }}
@@ -849,47 +849,7 @@ const HeroSection = () => {
               </MagneticButton>
             </MicroPulseFeedback>
           </motion.div>
-
-          <motion.div
-            whileHover={{ y: -5 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            <MicroPulseFeedback pulseType="scale" pulseIntensity="light">
-              <MagneticButton
-                className="relative btn-gcp-secondary text-lg px-8 py-4 overflow-hidden group border-2 border-transparent hover:border-gcp-blue/30"
-                strength={0.25}
-              >
-                {/* Animated border gradient */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-gcp-yellow via-gcp-red to-gcp-yellow opacity-0 group-hover:opacity-20 rounded-lg"
-                  animate={{
-                    rotate: [0, 360],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                />
-                <span className="relative z-10">Learn More</span>
-                <motion.span
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100"
-                  animate={{
-                    rotate: [0, 360],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  🌟
-                </motion.span>
-              </MagneticButton>
-            </MicroPulseFeedback>
-          </motion.div>
-        </StaggeredReveal>
+        </motion.div>
 
         {/* Stats */}
         <StaggeredReveal

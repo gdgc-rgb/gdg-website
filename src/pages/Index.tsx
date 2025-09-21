@@ -504,27 +504,10 @@ const Index = () => {
             </div>
 
             {/* SVG Logo Animation */}
-            <div className="text-center">
-              <h3 className="text-2xl font-bold mb-8">Google Cloud Platform</h3>
-              <SVGPathDrawing
-                paths={[
-                  "M20 4h-16c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2z",
-                  "M8 12l4-4 4 4",
-                  "M12 8v8",
-                ]}
-                className="mx-auto"
-                strokeColor="hsl(var(--primary))"
-                strokeWidth={3}
-                duration={1.5}
-                staggerDelay={0.5}
-                viewBox="0 0 24 24"
-                size={{ width: 120, height: 120 }}
-              />
-            </div>
+            
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );
