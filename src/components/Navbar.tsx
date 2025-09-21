@@ -28,23 +28,22 @@ const Navbar = () => {
       />
 
       <MorphingNavbar
-        morphOnScroll={true}
-        scrollThreshold={50}
-        className="h-16"
+        morphOnScroll={false}
+        className="h-24"
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center h-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 mt-3">
+          <div className="flex justify-between items-center h-16 rounded-full bg-white/95 backdrop-blur border border-border/60 shadow-lg px-4 sm:px-6">
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img 
                 src="/gdg_mlrit_logo.png" 
                 alt="GDG MLRIT" 
-                className="h-16 w-auto"
+                className="h-10 sm:h-12 w-auto"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-2">
+            <div className="hidden md:flex items-center space-x-1">
               {navItems.map((item) => (
                 <AnimatedNavLink
                   key={item.path}
@@ -52,8 +51,8 @@ const Navbar = () => {
                   isActive={isActive(item.path)}
                   className={
                     isActive(item.path)
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-foreground bg-muted/60 rounded-full px-3 py-1"
+                      : "text-muted-foreground hover:text-foreground rounded-full px-3 py-1"
                   }
                   underlineColor="hsl(var(--primary))"
                 >

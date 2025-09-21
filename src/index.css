@@ -129,6 +129,14 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image: 
+      linear-gradient(rgba(66, 133, 244, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(66, 133, 244, 0.02) 1px, transparent 1px),
+      linear-gradient(rgba(52, 168, 83, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(52, 168, 83, 0.015) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 160px 160px, 160px 160px;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    animation: subtle-grid-move 40s linear infinite;
   }
 }
 
@@ -181,6 +189,23 @@
   
   .bg-gradient-card {
     background: var(--gradient-card);
+  }
+
+  /* Animations */
+  @keyframes hero-fade-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes subtle-grid-move {
+    0% {
+      background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+      background-position: 80px 80px, 80px 80px, 160px 160px, 160px 160px;
+    }
   }
 }
 

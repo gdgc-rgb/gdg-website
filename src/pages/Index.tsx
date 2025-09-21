@@ -29,6 +29,7 @@ import CheckboxMorphing from "@/components/animations/CheckboxMorphing";
 import ToggleSwitchBounce from "@/components/animations/ToggleSwitchBounce";
 import MicroPulseFeedback from "@/components/animations/MicroPulseFeedback";
 import { certificates, swags } from "@/data/mockData";
+import GradientHeaderCard from "@/components/ui/gradient-header-card";
 
 const Index = () => {
   return (
@@ -42,105 +43,52 @@ const Index = () => {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <PerspectiveFlip delay={0.1} axis="y">
-              <GlowCard className="p-8 mb-16 bg-card border border-border rounded-xl">
+              <GradientHeaderCard title="What is Google Cloud Study Jam?" className="mb-16">
                 <div className="text-center">
-                  <ShimmerText
-                    className="text-3xl sm:text-4xl font-bold mb-4 block"
-                    delay={0.5}
-                    duration={2}
-                  >
-                    What is Google Cloud Study Jam?
-                  </ShimmerText>
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    Google Cloud Study Jam is a community-led learning program
-                    that provides free access to Google Cloud training, hands-on
-                    labs, and skill badges. Join thousands of learners worldwide
-                    in mastering cloud technologies.
+                    Google Cloud Study Jam is a community-led learning program that provides free access to Google Cloud training, hands-on labs, and skill badges. Join thousands of learners worldwide in mastering cloud technologies.
                   </p>
                 </div>
-              </GlowCard>
+              </GradientHeaderCard>
             </PerspectiveFlip>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
               <DiagonalSlideIn delay={0.3} corner="bottom-left" distance={80}>
-                <TiltCard className="p-8 bg-card border border-border rounded-xl shadow-strong">
+                <GradientHeaderCard title="Why Join GCSJ?" className="h-full">
                   <div>
-                    <h3 className="text-2xl font-semibold mb-6">
-                      Why Join GCSJ?
-                    </h3>
-                    <StaggeredReveal
-                      delay={0.7}
-                      staggerDelay={0.1}
-                      direction="left"
-                      className="space-y-4"
-                    >
+                    <StaggeredReveal delay={0.3} staggerDelay={0.08} direction="left" className="space-y-4">
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gcp-blue rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-muted-foreground">
-                          Learn in-demand cloud skills with hands-on labs and
-                          real-world projects
-                        </p>
+                        <p className="text-lg text-muted-foreground">Learn in-demand cloud skills with hands-on labs and real-world projects</p>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gcp-green rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-muted-foreground">
-                          Earn industry-recognized Google Cloud certifications
-                          and skill badges
-                        </p>
+                        <p className="text-lg text-muted-foreground">Earn industry-recognized Google Cloud certifications and skill badges</p>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gcp-yellow rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-muted-foreground">
-                          Connect with a global community of cloud enthusiasts
-                          and professionals
-                        </p>
+                        <p className="text-lg text-muted-foreground">Connect with a global community of cloud enthusiasts and professionals</p>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gcp-red rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-muted-foreground">
-                          Access exclusive swags, prizes, and career
-                          opportunities
-                        </p>
+                        <p className="text-lg text-muted-foreground">Access exclusive swags, prizes, and career opportunities</p>
                       </div>
                     </StaggeredReveal>
                   </div>
-                </TiltCard>
+                </GradientHeaderCard>
               </DiagonalSlideIn>
 
               <DiagonalSlideIn delay={0.5} corner="bottom-right" distance={80}>
-                <GlowCard
-                  className="p-8 bg-card border border-border rounded-xl shadow-glow"
-                  glowColor="hsl(var(--gcp-blue))"
-                  glowIntensity={0.4}
-                >
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4">
-                      Program Highlights
-                    </h4>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Duration</span>
-                        <span className="font-medium">4-6 weeks</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Cost</span>
-                        <span className="font-medium text-gcp-green">
-                          100% Free
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Format</span>
-                        <span className="font-medium">
-                          Self-paced + Community
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Support</span>
-                        <span className="font-medium">24/7 Community Help</span>
-                      </div>
-                    </div>
+                <GradientHeaderCard title="Program Highlights" className="h-full">
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Duration</span><span className="text-lg font-medium">4-6 weeks</span></div>
+                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Cost</span><span className="text-lg font-medium text-gcp-green">100% Free</span></div>
+                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Format</span><span className="text-lg font-medium">Self-paced + Community</span></div>
+                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Support</span><span className="text-lg font-medium">24/7 Community Help</span></div>
+                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Certification</span><span className="text-lg font-medium">Google Cloud Skill Badges</span></div>
+                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Platform Access</span><span className="text-lg font-medium">Google Cloud Console</span></div>
                   </div>
-                </GlowCard>
+                </GradientHeaderCard>
               </DiagonalSlideIn>
             </div>
           </div>
@@ -178,78 +126,35 @@ const Index = () => {
 
             <RotatingCardGrid
               columns={4}
-              rotationIntensity={8}
-              staggerDelay={0.15}
-              className="gap-4 md:gap-6"
+              staggerDelay={0.06}
+              className="gap-6"
+              minimal
+              cardClassName="p-0 overflow-hidden"
               cards={[
-                <MorphingShape
-                  className="p-6 text-center h-full"
-                  shapes={{ initial: "16px", hover: "50%" }}
-                  colors={{
-                    initial: "hsl(var(--card))",
-                    hover: "hsl(var(--accent-red) / 0.1)",
-                  }}
-                >
-                  <div className="w-12 h-12 bg-accent-red-bg rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💻</span>
+                <GradientHeaderCard title="Compute" compact>
+                  <div className="text-center flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 rounded-lg bg-gcp-blue/10 text-gcp-blue grid place-items-center text-2xl">💻</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Virtual machines, containers, and serverless computing solutions</p>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Compute</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Virtual machines, containers, and serverless computing
-                    solutions
-                  </p>
-                </MorphingShape>,
-
-                <MorphingShape
-                  className="p-6 text-center h-full"
-                  shapes={{ initial: "16px", hover: "50%" }}
-                  colors={{
-                    initial: "hsl(var(--card))",
-                    hover: "hsl(var(--accent-yellow) / 0.1)",
-                  }}
-                >
-                  <div className="w-12 h-12 bg-accent-yellow-bg rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💾</span>
+                </GradientHeaderCard>,
+                <GradientHeaderCard title="Storage" compact>
+                  <div className="text-center flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 rounded-lg bg-gcp-yellow/10 text-gcp-yellow grid place-items-center text-2xl">💾</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Secure, durable, and scalable storage solutions</p>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Storage</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Secure, durable, and scalable storage solutions
-                  </p>
-                </MorphingShape>,
-
-                <MorphingShape
-                  className="p-6 text-center h-full"
-                  shapes={{ initial: "16px", hover: "50%" }}
-                  colors={{
-                    initial: "hsl(var(--card))",
-                    hover: "hsl(var(--accent-green) / 0.1)",
-                  }}
-                >
-                  <div className="w-12 h-12 bg-accent-green-bg rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🤖</span>
+                </GradientHeaderCard>,
+                <GradientHeaderCard title="AI & ML" compact>
+                  <div className="text-center flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 rounded-lg bg-gcp-green/10 text-gcp-green grid place-items-center text-2xl">🤖</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Machine learning and artificial intelligence services</p>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">AI & ML</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Machine learning and artificial intelligence services
-                  </p>
-                </MorphingShape>,
-
-                <MorphingShape
-                  className="p-6 text-center h-full"
-                  shapes={{ initial: "16px", hover: "50%" }}
-                  colors={{
-                    initial: "hsl(var(--card))",
-                    hover: "hsl(var(--primary) / 0.1)",
-                  }}
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">📊</span>
+                </GradientHeaderCard>,
+                <GradientHeaderCard title="Analytics" compact>
+                  <div className="text-center flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 rounded-lg bg-gcp-red/10 text-gcp-red grid place-items-center text-2xl">📊</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Big data analytics and business intelligence tools</p>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Analytics</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Big data analytics and business intelligence tools
-                  </p>
-                </MorphingShape>,
+                </GradientHeaderCard>,
               ]}
             />
           </div>

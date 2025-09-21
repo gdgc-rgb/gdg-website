@@ -77,7 +77,7 @@ const ScrollCard = ({
         transition: { duration: 0.3, ease: "easeOut" },
       }}
       className={`
-        bg-card border border-border rounded-xl backdrop-blur-sm
+        bg-white border border-gray-200 rounded-xl
         transition-all duration-300 ease-out
         ${shadowClasses[shadowLevel]}
         ${className}

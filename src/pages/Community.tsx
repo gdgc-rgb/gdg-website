@@ -83,27 +83,27 @@ const Community = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
+              <div className="bg-white rounded-xl p-6 border-2 border-gcp-blue/30 hover:border-gcp-blue hover:shadow-lg transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-3 text-gcp-blue">Workshops & Bootcamps</h3>
                 <p className="text-muted-foreground">Hands-on learning on Web Development, Android, Cloud, AI/ML, and more.</p>
               </div>
               
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
+              <div className="bg-white rounded-xl p-6 border-2 border-gcp-green/30 hover:border-gcp-green hover:shadow-lg transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-3 text-gcp-green">Tech Talks</h3>
                 <p className="text-muted-foreground">Learn from experts and industry professionals.</p>
               </div>
               
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
+              <div className="bg-white rounded-xl p-6 border-2 border-gcp-yellow/30 hover:border-gcp-yellow hover:shadow-lg transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-3 text-gcp-yellow">Hackathons & Competitions</h3>
                 <p className="text-muted-foreground">Test skills, innovate, and showcase talent.</p>
               </div>
               
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
+              <div className="bg-white rounded-xl p-6 border-2 border-gcp-red/30 hover:border-gcp-red hover:shadow-lg transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-3 text-gcp-red">Community Projects</h3>
                 <p className="text-muted-foreground">Collaborate on impactful projects with peers.</p>
               </div>
               
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
+              <div className="bg-white rounded-xl p-6 border-2 border-gcp-blue/30 hover:border-gcp-blue hover:shadow-lg transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-3 text-gcp-blue">Networking Events</h3>
                 <p className="text-muted-foreground">Connect with developers across the globe.</p>
               </div>

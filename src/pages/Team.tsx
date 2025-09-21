@@ -29,7 +29,7 @@ const Team = () => {
               {teamMembers.map((member, index) => (
                 <div
                   key={member.id}
-                  className="gcp-card bg-card rounded-xl overflow-hidden border border-border group"
+                  className="gcp-card bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-gcp-blue group transition-all duration-300"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="aspect-square overflow-hidden bg-gradient-to-br from-gcp-blue/20 to-gcp-green/20">
@@ -40,7 +40,7 @@ const Team = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 bg-white">
                     <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
                     <p className="text-primary font-medium mb-3">{member.position}</p>
                     {member.bio && (
