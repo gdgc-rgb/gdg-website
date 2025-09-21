@@ -31,7 +31,7 @@ const ParallaxBackground = ({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden w-screen ${className}`}
       style={{ height }}
     >
       {/* Parallax Layers */}
@@ -41,7 +41,7 @@ const ParallaxBackground = ({
         return (
           <motion.div
             key={index}
-            className={`absolute inset-0 ${layer.className || ""}`}
+            className={`absolute inset-0 w-screen h-screen ${layer.className || ""}`}
             style={{
               y,
               filter: layer.blur ? `blur(${layer.blur}px)` : "none",

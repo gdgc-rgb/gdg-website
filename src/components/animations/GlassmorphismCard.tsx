@@ -35,11 +35,9 @@ const GlassmorphismCard = ({
         damping: 20,
       }}
       style={{
-        background: `rgba(255, 255, 255, ${opacity})`,
-        backdropFilter: `blur(${blurIntensity}px)`,
-        WebkitBackdropFilter: `blur(${blurIntensity}px)`,
-        border: "1px solid rgba(255, 255, 255, 0.2)",
+        background: "white",
         borderRadius: "16px",
+        border: "1px solid rgba(0,0,0,0.1)",
       }}
     >
       {/* Animated border gradient */}

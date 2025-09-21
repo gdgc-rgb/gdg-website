@@ -49,7 +49,7 @@ const CardStackSpread = ({
         return (
           <motion.div
             key={index}
-            className="absolute inset-0 bg-card border border-border rounded-xl shadow-lg"
+            className="absolute inset-0 bg-white border border-gray-200 rounded-xl shadow-lg"
             style={{
               zIndex: totalCards - index,
             }}

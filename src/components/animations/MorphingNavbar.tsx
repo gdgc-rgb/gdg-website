@@ -44,7 +44,7 @@ const MorphingNavbar = ({
   const borderRadius = useTransform(
     scrollY,
     [0, scrollThreshold],
-    ["0px", "16px"]
+    ["0px", "9999px"]
   );
 
   const scale = useTransform(scrollY, [0, scrollThreshold], [1, 0.95]);
@@ -53,7 +53,7 @@ const MorphingNavbar = ({
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${className}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${className}`}
       style={{
         backgroundColor: morphOnScroll ? backgroundColor : undefined,
         backdropFilter: morphOnScroll ? backdropBlur : undefined,
@@ -62,58 +62,66 @@ const MorphingNavbar = ({
         scale: morphOnScroll ? scale : undefined,
         y: morphOnScroll ? y : undefined,
       }}
-      animate={{
-        boxShadow: isScrolled
-          ? "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-          : "0 0 0 0 rgba(0, 0, 0, 0)",
-        border: isScrolled
-          ? "1px solid rgba(255, 255, 255, 0.2)"
-          : "1px solid transparent",
-      }}
+      animate={
+        morphOnScroll
+          ? {
+              boxShadow: isScrolled
+                ? "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                : "0 0 0 0 rgba(0, 0, 0, 0)",
+              border: isScrolled
+                ? "1px solid rgba(255, 255, 255, 0.2)"
+                : "1px solid transparent",
+            }
+          : undefined
+      }
       transition={{
         type: "spring",
         stiffness: 300,
         damping: 30,
       }}
     >
-      {/* Animated background pattern */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `linear-gradient(135deg, 
-            hsl(var(--primary) / 0.05) 0%, 
-            hsl(var(--secondary) / 0.05) 100%)`,
-          borderRadius: morphOnScroll ? borderRadius : undefined,
-        }}
-        animate={{
-          opacity: isScrolled ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-      />
+      {morphOnScroll && (
+        <>
+          {/* Animated background pattern */}
+          <motion.div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `linear-gradient(135deg, 
+                hsl(var(--primary) / 0.05) 0%, 
+                hsl(var(--secondary) / 0.05) 100%)`,
+              borderRadius: morphOnScroll ? borderRadius : undefined,
+            }}
+            animate={{
+              opacity: isScrolled ? 1 : 0,
+            }}
+            transition={{ duration: 0.3 }}
+          />
 
-      {/* Morphing border gradient */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `linear-gradient(135deg, 
-            hsl(var(--primary) / 0.2), 
-            hsl(var(--secondary) / 0.2))`,
-          mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-          maskComposite: "subtract",
-          WebkitMask:
-            "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-          WebkitMaskComposite: "subtract",
-          padding: "1px",
-          borderRadius: morphOnScroll ? borderRadius : undefined,
-        }}
-        animate={{
-          opacity: isScrolled ? 0.6 : 0,
-        }}
-        transition={{ duration: 0.5 }}
-      />
+          {/* Morphing border gradient */}
+          <motion.div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `linear-gradient(135deg, 
+                hsl(var(--primary) / 0.2), 
+                hsl(var(--secondary) / 0.2))`,
+              mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+              maskComposite: "subtract",
+              WebkitMask:
+                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+              WebkitMaskComposite: "subtract",
+              padding: "1px",
+              borderRadius: morphOnScroll ? borderRadius : undefined,
+            }}
+            animate={{
+              opacity: isScrolled ? 0.6 : 0,
+            }}
+            transition={{ duration: 0.5 }}
+          />
+        </>
+      )}
 
       {/* Content */}
-      <div className="relative z-10 px-4 md:px-6 lg:px-8">{children}</div>
+  <div className="relative z-10 px-0">{children}</div>
     </motion.nav>
   );
 };

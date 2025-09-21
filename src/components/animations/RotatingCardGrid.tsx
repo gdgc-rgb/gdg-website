@@ -7,6 +7,8 @@ interface RotatingCardGridProps {
   columns?: number;
   rotationIntensity?: number;
   staggerDelay?: number;
+  minimal?: boolean;
+  cardClassName?: string;
 }
 
 const RotatingCardGrid = ({
@@ -15,6 +17,8 @@ const RotatingCardGrid = ({
   columns = 3,
   rotationIntensity = 10,
   staggerDelay = 0.1,
+  minimal = false,
+  cardClassName = "",
 }: RotatingCardGridProps) => {
   const gridRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -35,19 +39,19 @@ const RotatingCardGrid = ({
         const rotationY = useTransform(
           scrollYProgress,
           [0, 1],
-          [0, rotationIntensity * (col % 2 === 0 ? 1 : -1)]
+          [0, (minimal ? 0 : rotationIntensity) * (col % 2 === 0 ? 1 : -1)]
         );
 
         const rotationX = useTransform(
           scrollYProgress,
           [0, 1],
-          [0, rotationIntensity * (row % 2 === 0 ? 1 : -1)]
+          [0, (minimal ? 0 : rotationIntensity) * (row % 2 === 0 ? 1 : -1)]
         );
 
         const scale = useTransform(
           scrollYProgress,
           [0, 0.5, 1],
-          [0.9, 1.1, 0.9]
+          minimal ? [1, 1, 1] : [0.9, 1.1, 0.9]
         );
 
         return (
@@ -72,44 +76,43 @@ const RotatingCardGrid = ({
                 rotateX: rotationX,
                 scale,
               }}
-              whileHover={{
-                rotateY: 5,
-                rotateX: 5,
-                scale: 1.05,
-                z: 50,
-              }}
+              whileHover={minimal ? { scale: 1.02 } : { rotateY: 5, rotateX: 5, scale: 1.05, z: 50 }}
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 20,
               }}
             >
-              <div className="bg-card border border-border rounded-xl p-6 shadow-lg transform-gpu backface-hidden">
+              <div className={`${minimal ? "bg-white border border-gray-200 rounded-2xl p-6 shadow-md transition-shadow" : "bg-white border border-gray-200 rounded-xl p-6 shadow-lg transform-gpu backface-hidden"} ${cardClassName}`}>
                 {card}
 
-                {/* Shimmer effect on scroll */}
-                <motion.div
-                  className="absolute inset-0 rounded-xl pointer-events-none"
-                  style={{
-                    background:
-                      "linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)",
-                    opacity: useTransform(
-                      scrollYProgress,
-                      [0, 0.5, 1],
-                      [0, 1, 0]
-                    ),
-                  }}
-                />
+                {minimal ? null : (
+                  <>
+                    {/* Shimmer effect on scroll */}
+                    <motion.div
+                      className="absolute inset-0 rounded-xl pointer-events-none"
+                      style={{
+                        background:
+                          "linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)",
+                        opacity: useTransform(
+                          scrollYProgress,
+                          [0, 0.5, 1],
+                          [0, 1, 0]
+                        ),
+                      }}
+                    />
 
-                {/* Depth shadow */}
-                <motion.div
-                  className="absolute inset-0 rounded-xl bg-black/10 -z-10"
-                  style={{
-                    x: useTransform(rotationY, [-10, 10], [-2, 2]),
-                    y: useTransform(rotationX, [-10, 10], [-2, 2]),
-                    filter: "blur(4px)",
-                  }}
-                />
+                    {/* Depth shadow */}
+                    <motion.div
+                      className="absolute inset-0 rounded-xl bg-black/10 -z-10"
+                      style={{
+                        x: useTransform(rotationY, [-10, 10], [-2, 2]),
+                        y: useTransform(rotationX, [-10, 10], [-2, 2]),
+                        filter: "blur(4px)",
+                      }}
+                    />
+                  </>
+                )}
               </div>
             </motion.div>
           </motion.div>
