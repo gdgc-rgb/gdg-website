@@ -12,9 +12,7 @@ import ShimmerText from "@/components/animations/ShimmerText";
 import GlassmorphismCard from "@/components/animations/GlassmorphismCard";
 import MorphingShape from "@/components/animations/MorphingShape";
 import CardStackSpread from "@/components/animations/CardStackSpread";
-import RotatingCardGrid from "@/components/animations/RotatingCardGrid";
 import ScrollSyncedAnimation from "@/components/animations/ScrollSyncedAnimation";
-import SectionWipeTransition from "@/components/animations/SectionWipeTransition";
 import InfiniteScrollLoop from "@/components/animations/InfiniteScrollLoop";
 import KenBurnsEffect from "@/components/animations/KenBurnsEffect";
 import LazyImageFadeIn from "@/components/animations/LazyImageFadeIn";
@@ -40,38 +38,61 @@ const Index = () => {
         <HeroSection />
 
         {/* What is GCSJ Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12">
+          <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-14">
             <PerspectiveFlip delay={0.1} axis="y">
-              <GradientHeaderCard title="What is Google Cloud Study Jam?" className="mb-16">
+              <GradientHeaderCard
+                title="What is Google Cloud Study Jam?"
+                className="mb-6"
+              >
                 <div className="text-center">
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    Google Cloud Study Jam is a community-led learning program that provides free access to Google Cloud training, hands-on labs, and skill badges. Join thousands of learners worldwide in mastering cloud technologies.
+                  <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+                    Google Cloud Study Jam is a community-led learning program
+                    that provides free access to Google Cloud training, hands-on
+                    labs, and skill badges. Join thousands of learners worldwide
+                    in mastering cloud technologies.
                   </p>
                 </div>
               </GradientHeaderCard>
             </PerspectiveFlip>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
               <DiagonalSlideIn delay={0.3} corner="bottom-left" distance={80}>
-                <GradientHeaderCard title="Why Join GCSJ?" className="h-full">
+                <GradientHeaderCard title="Why Join Google Cloud Study Jams?" className="h-full">
                   <div>
-                    <StaggeredReveal delay={0.3} staggerDelay={0.08} direction="left" className="space-y-4">
+                    <StaggeredReveal
+                      delay={0.3}
+                      staggerDelay={0.08}
+                      direction="left"
+                      className="space-y-4"
+                    >
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gcp-blue rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-lg text-muted-foreground">Learn in-demand cloud skills with hands-on labs and real-world projects</p>
+                        <p className="text-lg text-muted-foreground">
+                          Learn in-demand cloud skills with hands-on labs and
+                          real-world projects
+                        </p>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gcp-green rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-lg text-muted-foreground">Earn industry-recognized Google Cloud certifications and skill badges</p>
+                        <p className="text-lg text-muted-foreground">
+                          Earn industry-recognized Google Cloud certifications
+                          and skill badges
+                        </p>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gcp-yellow rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-lg text-muted-foreground">Connect with a global community of cloud enthusiasts and professionals</p>
+                        <p className="text-lg text-muted-foreground">
+                          Connect with a global community of cloud enthusiasts
+                          and professionals
+                        </p>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-gcp-red rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-lg text-muted-foreground">Access exclusive swags, prizes, and career opportunities</p>
+                        <p className="text-lg text-muted-foreground">
+                          Access exclusive swags, prizes, and career
+                          opportunities
+                        </p>
                       </div>
                     </StaggeredReveal>
                   </div>
@@ -79,14 +100,57 @@ const Index = () => {
               </DiagonalSlideIn>
 
               <DiagonalSlideIn delay={0.5} corner="bottom-right" distance={80}>
-                <GradientHeaderCard title="Program Highlights" className="h-full">
+                <GradientHeaderCard
+                  title="Program Highlights"
+                  className="h-full"
+                >
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Duration</span><span className="text-lg font-medium">4-6 weeks</span></div>
-                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Cost</span><span className="text-lg font-medium text-gcp-green">100% Free</span></div>
-                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Format</span><span className="text-lg font-medium">Self-paced + Community</span></div>
-                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Support</span><span className="text-lg font-medium">24/7 Community Help</span></div>
-                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Certification</span><span className="text-lg font-medium">Google Cloud Skill Badges</span></div>
-                    <div className="flex justify-between items-center"><span className="text-lg text-muted-foreground">Platform Access</span><span className="text-lg font-medium">Google Cloud Console</span></div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg text-muted-foreground">
+                        Duration
+                      </span>
+                      <span className="text-lg font-medium">4-6 weeks</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg text-muted-foreground">
+                        Cost
+                      </span>
+                      <span className="text-lg font-medium text-gcp-green">
+                        100% Free
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg text-muted-foreground">
+                        Format
+                      </span>
+                      <span className="text-lg font-medium">
+                        Self-paced + Community
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg text-muted-foreground">
+                        Support
+                      </span>
+                      <span className="text-lg font-medium">
+                        24/7 Community Help
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg text-muted-foreground">
+                        Certification
+                      </span>
+                      <span className="text-lg font-medium">
+                        Google Cloud Skill Badges
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg text-muted-foreground">
+                        Platform Access
+                      </span>
+                      <span className="text-lg font-medium">
+                        Google Cloud Console
+                      </span>
+                    </div>
                   </div>
                 </GradientHeaderCard>
               </DiagonalSlideIn>
@@ -95,12 +159,8 @@ const Index = () => {
         </section>
 
         {/* Google Cloud Platform Overview */}
-        <SectionWipeTransition
-          direction="left"
-          triggerPoint={0.8}
-          className="py-20 bg-muted/20"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-muted/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <GlassmorphismCard
               className="p-8 mb-16"
               blurIntensity={15}
@@ -124,45 +184,64 @@ const Index = () => {
               </div>
             </GlassmorphismCard>
 
-            <RotatingCardGrid
-              columns={4}
-              staggerDelay={0.06}
-              className="gap-6"
-              minimal
-              cardClassName="p-0 overflow-hidden"
-              cards={[
+            <StaggeredReveal
+              delay={0.2}
+              staggerDelay={0.1}
+              direction="up"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4"
+            >
+              {[
                 <GradientHeaderCard title="Compute" compact>
                   <div className="text-center flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-lg bg-gcp-blue/10 text-gcp-blue grid place-items-center text-2xl">💻</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Virtual machines, containers, and serverless computing solutions</p>
+                    <div className="w-12 h-12 rounded-lg bg-gcp-blue/10 text-gcp-blue grid place-items-center text-2xl">
+                      💻
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Virtual machines, containers, and serverless computing
+                      solutions
+                    </p>
                   </div>
                 </GradientHeaderCard>,
                 <GradientHeaderCard title="Storage" compact>
                   <div className="text-center flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-lg bg-gcp-yellow/10 text-gcp-yellow grid place-items-center text-2xl">💾</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Secure, durable, and scalable storage solutions</p>
+                    <div className="w-12 h-12 rounded-lg bg-gcp-yellow/10 text-gcp-yellow grid place-items-center text-2xl">
+                      💾
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Secure, durable, and scalable storage solutions
+                    </p>
                   </div>
                 </GradientHeaderCard>,
                 <GradientHeaderCard title="AI & ML" compact>
                   <div className="text-center flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-lg bg-gcp-green/10 text-gcp-green grid place-items-center text-2xl">🤖</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Machine learning and artificial intelligence services</p>
+                    <div className="w-12 h-12 rounded-lg bg-gcp-green/10 text-gcp-green grid place-items-center text-2xl">
+                      🤖
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Machine learning and artificial intelligence services
+                    </p>
                   </div>
                 </GradientHeaderCard>,
                 <GradientHeaderCard title="Analytics" compact>
                   <div className="text-center flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-lg bg-gcp-red/10 text-gcp-red grid place-items-center text-2xl">📊</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Big data analytics and business intelligence tools</p>
+                    <div className="w-12 h-12 rounded-lg bg-gcp-red/10 text-gcp-red grid place-items-center text-2xl">
+                      📊
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Big data analytics and business intelligence tools
+                    </p>
                   </div>
                 </GradientHeaderCard>,
-              ]}
-            />
+              ].map((card, index) => (
+                <div key={index}>{card}</div>
+              ))}
+            </StaggeredReveal>
           </div>
-        </SectionWipeTransition>
+        </section>
 
         {/* Certificates and Swags */}
         <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <GlassmorphismCard
               className="p-8 mb-16"
               blurIntensity={12}
@@ -180,7 +259,7 @@ const Index = () => {
               </div>
             </GlassmorphismCard>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 items-center">
               {/* Certificate Cards Stack */}
               <div className="flex justify-center">
                 <CardStackSpread
@@ -246,7 +325,7 @@ const Index = () => {
 
         {/* Partner Logos Infinite Scroll */}
         <section className="py-16 bg-muted/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-center text-lg font-semibold text-muted-foreground mb-8">
               Powered by Google Cloud Platform
             </h3>
@@ -298,7 +377,7 @@ const Index = () => {
 
         {/* Video Section */}
         <section className="py-20 bg-muted/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <ScrollCard
               delay={0.1}
               direction="scale"
@@ -349,7 +428,7 @@ const Index = () => {
 
         {/* Interactive Media Gallery */}
         <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <GlassmorphismCard className="p-8 mb-16">
               <div className="text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -362,7 +441,7 @@ const Index = () => {
               </div>
             </GlassmorphismCard>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 mb-16">
               {/* Ken Burns Background */}
               <div className="relative h-64 rounded-xl overflow-hidden">
                 <KenBurnsEffect
